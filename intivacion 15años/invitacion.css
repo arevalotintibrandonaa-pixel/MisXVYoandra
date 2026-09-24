@@ -1,0 +1,216 @@
+:root {
+  --primary: #d4af37; /* Dorado */
+  --bg-color: #faf8f5;
+  --text-color: #2c2c2c;
+  --font-title: 'Great Vibes', cursive;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* --- ESTILOS DEL SOBRE INTERACTIVO --- */
+.envelope-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  overflow: hidden;
+  pointer-events: auto;
+  transition: visibility 0s 1.2s;
+}
+
+.envelope-container.open {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #faf8f5;
+  background-image: radial-gradient(#e0dcd5 1px, transparent 0);
+  background-size: 20px 20px;
+  z-index: 2;
+  transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.flap-left {
+  left: 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.flap-right {
+  right: 0;
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.wax-seal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(circle, #f2a4b3 0%, #d87b8c 70%, #b85466 100%);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 4px 10px rgba(0, 0, 0, 0.25),
+    inset 0 2px 4px rgba(255, 255, 255, 0.4),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.seal-inner {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  color: #8c3242;
+  text-shadow: 
+    1px 1px 1px rgba(255, 255, 255, 0.4),
+    -1px -1px 1px rgba(0, 0, 0, 0.3);
+  user-select: none;
+}
+
+/* Animación de apertura */
+.envelope-container.open .wax-seal {
+  transform: translate(-50%, -50%) scale(1.4);
+  opacity: 0;
+}
+
+.envelope-container.open .flap-left {
+  transform: translateX(-100%);
+}
+
+.envelope-container.open .flap-right {
+  transform: translateX(100%);
+}
+/* ------------------------------------- */
+
+/* Audio Player */
+.audio-player {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+}
+
+.audio-player button {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: 1px solid var(--primary);
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  backdrop-filter: blur(4px);
+}
+
+/* Header */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background.jpg') center/cover no-repeat;
+  color: #fff;
+  padding: 20px;
+}
+
+.title {
+  font-family: var(--font-title);
+  font-size: 4rem;
+  font-weight: 400;
+  color: var(--primary);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.subtitle {
+  letter-spacing: 4px;
+  font-size: 0.9rem;
+}
+
+.date {
+  margin-top: 15px;
+  letter-spacing: 2px;
+}
+
+/* Secciones Generales */
+.section {
+  padding: 50px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+/* Timer */
+.timer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.timer div {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  width: 22%;
+}
+
+.timer span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: block;
+}
+
+.timer p {
+  font-size: 0.7rem;
+  color: #666;
+}
+
+/* Botón WhatsApp */
+.btn-whatsapp {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.map-container {
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
