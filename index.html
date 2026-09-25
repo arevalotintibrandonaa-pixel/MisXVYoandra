@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis 15 Años</title>
+  
+  <link rel="stylesheet" href="invitacion.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sobre / Portada Interactiva con Sello de Cera -->
+  <div class="envelope-container open-state" id="envelope">
+    <div class="flap flap-left"></div>
+    <div class="flap flap-right"></div>
+    <button class="wax-seal" id="sealButton" aria-label="Abrir invitación">
+      <div class="seal-inner">Y</div>
+    </button>
+  </div>
+
+  <!-- Reproductor de Música Flotante -->
+  <div class="audio-player">
+    <button id="playBtn">🎵 Reproducir Música</button>
+    <audio id="bgMusic" loop src="Man O To [WSHSL5P4Mww].mp3"></audio>
+  </div>
+
+  <!-- Hero Section / Portada -->
+  <header class="hero">
+    <div class="hero-content">
+      <p class="subtitle">MIS XV AÑOS</p>
+      <h1 class="title">Yoandra</h1>
+      <p class="date">31 · OCTUBRE · 2026</p>
+    </div>
+  </header>
+
+  <!-- Sección de Tarjetas Interactivas -->
+  <section class="section cards-section">
+    
+    <!-- TARJETA 1: REGALOS -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <!-- Frente -->
+        <div class="flip-card-front">
+          <!-- Icono de regalo (con clase adicional para tamaño) -->
+          <img src="regalo.png" alt="Regalo" class="card-icon regalo-icon">
+          <h3 class="card-title">Regalos</h3>
+          <p class="card-text">El mejor regalo es compartir este día contigo.</p>
+          
+          <div class="flip-hint">
+            <img src="flecha.png" alt="Voltear" class="flip-icon">
+            <span>Click para voltear</span>
+          </div>
+        </div>
+        <!-- Reverso (Lo que se ve al girar) -->
+        <div class="flip-card-back">
+          <h3 class="card-title">Lluvia de Sobres</h3>
+          <p class="card-text"> Pero si deseas consentirme en este día especial. Agradeceré mucho tu obsequio en efectivo. </p>
+          <p class="card-text">¡Gracias por tu detalle!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TARJETA 2: COLORES -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <!-- Frente -->
+        <div class="flip-card-front">
+          <img src="vestimenta.png" alt="Código de vestimenta" class="card-icon">
+          <h3 class="card-title">Colores reservados</h3>
+          <p class="card-text">Una orientación para los tonos a vestir</p>
+          
+          <div class="flip-hint">
+            <img src="flecha.png" alt="Voltear" class="flip-icon">
+            <span>Click para voltear</span>
+          </div>
+        </div>
+        <!-- Reverso (Lo que se ve al girar) -->
+        <div class="flip-card-back">
+          <h3 class="card-title">Evitar colores</h3>
+          <p class="card-text">Por favor, evita cualquier tipo de <strong>Rojo</strong> y sus tonalidades ya que han sido reservados para la quinceañera.</p>
+          <p>!Gracias por su Comprensión¡</p>
+          <div class="color-palette">
+            <div class="color-circle" style="background-color: #8c3242;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Contador -->
+  <section class="section counter-section">
+    <h2>FALTAN:</h2>
+    
+    <div id="countdown" class="timer">
+      <div><span id="days">00</span><p>Días</p></div>
+      <div><span id="hours">00</span><p>Horas</p></div>
+      <div><span id="minutes">00</span><p>Minutos</p></div>
+      <div><span id="seconds">00</span><p>Segundos</p></div>
+    </div>
+  </section>
+
+  <!-- Ubicación / Google Maps -->
+  <section class="section location-section">
+    <h2>UBICACIÓN</h2>
+    <p><strong> Recepción:</strong> Rancho el Indio</p>
+    <p>San Antonio la Paz, El Progreso</p>
+    
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.0122344857173!2d-90.29709572290244!3d14.768340885738175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589ecb15bf3798d%3A0x196ac26632d91ba6!2sEl%20Rancho%20del%20Indio!5e0!3m2!1ses-419!2sgt!4v1790270999270!5m2!1ses-419!2sgt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+  </section>
+
+  <!-- Confirmación WhatsApp -->
+  <section class="section rsvp-section">
+    <h2>CONFIRMACIÓN DE ASISTENCIA</h2>
+    <p>Por favor confirma tu asistencia antes del 20 de Octubre.</p>
+    
+    
+    <a href="https://wa.me/50230029420?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20los%20XV%20Años." target="_blank" class="btn-whatsapp">
+      Confirmar por WhatsApp
+    </a>
+  </section>
+
+  <!-- El script debe ir al final, justo antes de cerrar el body -->
+  <script src="invitacion.js"></script>
+</body>
+</html>
